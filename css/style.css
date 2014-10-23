@@ -1,0 +1,56 @@
+/* styling the body, where to start */
+body {
+	background: #eee;
+	color: #777;
+	font: 300 16px/1.6 "Roboto", sans-serif;
+	margin: 25px 100px;
+}
+
+/* give the header a different color */
+h1 {
+	color: #555;
+}
+
+/* give the text in form a different color */
+form first-child {
+	text-align: right;
+	color: #777;
+}
+
+/* changing the appearance of the inputs */
+input {
+	margin: 7px 20px;
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	border-radius: 16px;
+	border: 2px solid #dadada;
+	padding: 0px 4px;
+}
+
+/* changing the appearance of the focus of inputs */
+input:focus {
+	outline: none;
+	border-color: #9ecaed;
+	box-shadow: 0 0 10px #9ecaed;
+}
+
+/* changing the appearance of the button */
+button {
+	margin: 20px;
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	border-radius: 16px;
+	border: 2px solid #dadada;
+	padding: 0px 10px;
+}
+
+/* changing the appearance of the focus of thebutton */
+button:focus {
+	outline: none;
+	border-color: #9ecaed;
+	box-shadow: 0 0 10px #9ecaed;
+}​
+
+/* Without this brackets, we will get a error 
+ * from the css validator */
+{}

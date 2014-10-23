@@ -1,11 +1,25 @@
 <!DOCTYPE html>
+<!-- File: /~tlo/public_html/as6/index.html
+     91.461 Assignment 6: Creating your first web page
+     Takyiu Lo, UMass Lowell Computer Science, takyiu_lo@student.uml.edu
+     Created on October 23, 2014
+     This webpage will get a range of multiplication table and creates it -->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>My Page</title>
-    <script src="main.js"></script>
-  </head>
-  <body>
-    Hello World!
-  </body>
+<head>
+<meta charset="UTF-8">
+<title>Create a multplier table</title>
+<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="javascript/table.js"></script>
+</head>
+<body>
+	<h1>Table</h1>
+	<form id="inputs" action="javascript:void(0)">
+		Starting row    <input type="text" value="0" onKeyup="return numbersonly(this, event)" id="pOne" autofocus><br>
+		Ending row      <input type="text" value="0" onKeyup="return numbersonly(this, event)" id="pTwo"><br>
+		Starting column <input type="text" value="0" onKeyup="return numbersonly(this, event)" id="pThree"><br>
+		Ending column   <input type="text" value="0" onKeyup="return numbersonly(this, event)" id="pFour"><br>
+		<button type="button" onclick="crTable()">Create</button>
+	</form>
+</body>
 </html>
