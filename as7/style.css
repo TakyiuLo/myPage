@@ -1,0 +1,48 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+/* Give the outline a style */
+body {
+	background: #eee;
+	color: #333;
+	font: 300 16px/1.6 "Roboto", sans-serif;
+	margin: 25px 100px;
+}
+
+/* Make navigation bar to center */
+#navBar {
+	text-align: center;
+}
+
+/* Make the list without bullet points*/
+ul {
+	list-style-type: none;
+}
+
+/* Horizontal lists */
+li {
+	display: inline;
+}
+
+/* Give the navigation bar a style */
+#navBar a {
+	background-color: #FFEE66;
+	border: 1px solid #9ecaed;
+	border-radius: 16px;
+	margin: 0 64px;
+	padding: 8px 16px;
+}
+
+/* When a mouse hover on the navigation button */
+#navBar a:hover {
+	color: black;
+	background: #ccc;
+	border-color: black;
+}
+
+/* Move the content to a specific position */
+#content {
+	margin: 100px;
+	border: 2px solid #9ecaed;
+	border-radius: 16px;
+	padding: 16px;
+}
