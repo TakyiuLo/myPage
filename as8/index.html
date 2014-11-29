@@ -1,39 +1,43 @@
 <!DOCTYPE html>
+<!-- File: /~tlo/public_html/as8/index.html
+     91.461 Assignment 8: jQuery Validation Plugin and jQueryUI Tabbed Widget
+     Takyiu Lo, UMass Lowell Computer Science, takyiu_lo@student.uml.edu
+     Created on October 29, 2014
+     This webpage will get a range of multiplication table with validators and creates it on the second tab -->
 <html>
 <head>
-<title>Dynamic Tabs</title>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<!--
-     File:  /~heines/91.461/91.461-2014-15f/461-lecs/code/DynamicTabs.html
-     Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
-    Copyright (c) 2014 by Jesse M. Heines.  All rights reserved.  May be freely
-      copied or excerpted for educational purposes with credit to the author.
-     updated by JMH on November 14, 2014 at 9:10 PM
-   -->
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script
-	src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-<link
-	href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css"
-	rel="stylesheet">
-<script type="text/javascript">
-   $(document).ready( function() {
-         $("#myTabs").tabs();
-   });
-    </script>
+	<title>Dynamic Tabs</title>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <!-- load jQuery -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- load jQuery UI -->
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+	<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <!-- load CSS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- load my javascript -->
+	<script src="js/jqTabs.js" type="text/javascript"></script>
 </head>
 
 <body>
-	<h1>Dynamic Tabs</h1>
+	<h1>jQuery Validation Plugin and jQueryUI Tabbed Widget</h1>
 	<div id="myTabs">
 		<ul>
-			<li><a href="#a">Tab 1</a></li>
-
-
-			<li><a href="#b">Tab 2</a></li>
+			<li><a href="#inputs">Inputs</a></li>
+			<li><a href="#preview">Preview</a></li>
 		</ul>
-		</div>
+        <div id="inputs">
+        	<form id="form1" action="javascript:void(0)">
+				Starting row    <input type="number" value="0" id="pOne" name="pOne" required autofocus><br>
+				Ending row      <input type="number" value="0" id="pTwo" name="pTwo" required><br>
+				Starting column <input type="number" value="0" id="pThree" name="pThree" required><br>
+				Ending column   <input type="number" value="0" id="pFour" name="pFour" required><br>
+				<button type="submit" value="Create" id="create">Create</button>
+			</form>
+        </div>
+        <div id="preview"></div>
+	</div>
 	</div>
 </body>
 </html>
