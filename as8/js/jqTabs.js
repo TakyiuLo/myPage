@@ -2,6 +2,9 @@ $(document).ready(function() {
     var tabs = $("#myTabs").tabs();
     // validator
     $.validator.addMethod('greaterThanRowStart', function(value, element, param){
+        if (pTwo.value === "") {
+            return true;
+        }
         return parseInt(pTwo.value) >= parseInt(pOne.value);
     }, "The ending point must be greater than the starting point.");
 
