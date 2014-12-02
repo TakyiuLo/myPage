@@ -1,6 +1,15 @@
 $(document).ready(function() {
     var tabs = $("#myTabs").tabs();
     // validator
+    $.validator.addMethod('greaterThanRowStart', function(value, element, param){
+        console.log("k");
+        return parseInt($('#pTwo').value) >= parseInt($('#pOne').value);
+    }, "The ending point must be greater than the starting point.");
+
+    $.validator.addMethod('greaterThanColStart', function(value, element, param){
+        return parseInt(pFour.value) >= parseInt(pThree.value);
+    }, "The ending point must be greater than the starting point.");
+
     $('#form').validate({
         rules: {
             pOne: {
@@ -9,7 +18,8 @@ $(document).ready(function() {
             },
             pTwo: {
                 required: true,
-                digits: true
+                digits: true,
+                greaterThanRowStart: true
             },
             pThree: {
                 required: true,
@@ -17,7 +27,8 @@ $(document).ready(function() {
             },
             pFour: {
                 required: true,
-                digits: true
+                digits: true,
+                greaterThanColStart: true
             }
         },
         onkeyup: function(element) {
