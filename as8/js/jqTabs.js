@@ -1,8 +1,7 @@
 $(document).ready(function() {
-    $("#myTabs").tabs();
-
-    /* A default validate handles better, using below code will cause unable to generate
-	$('form1').validate({
+    var tabs = $("#myTabs").tabs();
+    // validator
+    $('#form').validate({
         rules: {
             pOne: {
                 required: true,
@@ -20,47 +19,32 @@ $(document).ready(function() {
                 required: true,
                 digits: true
             }
-		}
+        },
+        onkeyup: function(element) {
+            if ($('form').valid()) {
+                $('form').find(":submit").attr("disabled",
+                    false);
+            } else {
+                $('form').find(":submit").attr("disabled",
+                    true);
+            }
+        },
+        /* "The validation plugin allows you to configure these class names"
+         * http://stackoverflow.com/questions/6168926/jquery-validation-how-to-make-fields-red
+         */
+        errorClass: "my-error-class",
+        validClass: "my-valid-class"
     });
-	*/
 
-    function crTable() {
-        // using remove to refresh
-        var rTable = document.getElementById("myTable");
-        if (rTable !== null) rTable.remove();
+    function crTable(nextTabNo) {
         // getting the four values
-        // putting a "+" to make treat it as a number instead of string
+        // putting a "+" to treat the value as a number instead of string
         var pOne = +document.getElementById("pOne").value;
         var pTwo = +document.getElementById("pTwo").value;
         var pThree = +document.getElementById("pThree").value;
         var pFour = +document.getElementById("pFour").value;
         // get the reference for the preview
-        var preview = document.getElementById("preview");
-        // check if numbers are validate
-        if (pOne > pTwo) {
-            document.getElementById("pOne").setAttribute("style",
-                "outline-color: red");
-            document.getElementById("pOne").setAttribute("style",
-                "border-color: red");
-            return;
-        } else {
-			document.getElementById("pOne").setAttribute("style",
-                "outline-color: green");
-            document.getElementById("pOne").setAttribute("style",
-                "border-color: green");	
-		}
-        if (pThree > pFour) {
-            document.getElementById("pThree").setAttribute("style",
-                "outline-color: red");
-            document.getElementById("pThree").setAttribute("style",
-                "border-color: red");
-            return;
-        } else {
-			document.getElementById("pThree").setAttribute("style",
-                "outline-color: green");
-            document.getElementById("pThree").setAttribute("style",
-                "border-color: green");	
-		}
+        var preview = document.getElementById(nextTabNo);
         // creates a <table> element and a <tbody> element
         var tbl = document.createElement("table");
         var tblBody = document.createElement("tbody");
@@ -104,11 +88,54 @@ $(document).ready(function() {
         tbl.appendChild(tblBody);
         // appends <table> into preview
         preview.appendChild(tbl);
-        // setting an id for tbl
-        tbl.setAttribute("id", "myTable");
     }
+    var tabsdiv = $("#myTabs");
+    var tabslist = tabsdiv.find("ul");
+    var nextTabNo = tabslist.find("li").length;
+    // When create button click, a new tab will generate
     $('#create').click(function() {
-		crTable();
+        // check for first time
+        if (!$('form').valid()) {
+            $('form').find(":submit").attr("disabled", true);
+            return;
+        }
+        /* create a new tab with close button next to it
+         * http://stackoverflow.com/questions/14357614/add-close-button-to-jquery-ui-tabs
+         */
+        tabslist.append('<li id="li' + nextTabNo +
+            '"><a href="#tab' + nextTabNo + '">' + 'Tab ' +
+            nextTabNo +
+            '<\/a><input name="check" type="checkbox" id="checkbox' +
+            nextTabNo + '"><span id="tabspan' + nextTabNo +
+            '" class="ui-icon ui-icon-circle-close"></span><\/li>'
+        );
+        // add content to the new tab
+        tabsdiv.append('<div id="tab' + nextTabNo + '"><\/div>');
+        // create content table to the new tab
+        crTable("tab" + nextTabNo);
+        ++nextTabNo;
+        $('#myTabs').tabs("refresh");
+    });
+    // When close span clicked, it will close the tab that are closest to which you clicked
+    tabs.delegate("span.ui-icon-circle-close", "click", function() {
+        var panelId = $(this).closest("li").remove().attr(
+            "aria-controls");
+        $("#" + panelId).remove();
+        tabs.tabs("refresh");
+    });
+    $('#delete').click(function() {
+        // push id in the selected
+        var selected = [];
+        $('input:checkbox:checked').each(function() {
+            selected.push($(this).attr('id'));
+        });
+        // remove those unwanted tabs
+        for (var m = 0; m < selected.length; m++) {
+            var checkboxID = "" + selected[m];
+            var num = checkboxID.substring(8, checkboxID.length);
+            $('#tab' + num).remove();
+            $('#li' + num).remove();
+        }
         $('#tabs').tabs("refresh");
     });
 });

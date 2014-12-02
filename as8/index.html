@@ -13,6 +13,8 @@
     <!-- load jQuery UI -->
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 	<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <!-- load jQuery Validator -->
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script>
     <!-- load CSS -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -22,21 +24,20 @@
 
 <body>
 	<h1>jQuery Validation Plugin and jQueryUI Tabbed Widget</h1>
+    <button type="button" id="delete">Delete Selected tabs</button>
 	<div id="myTabs">
 		<ul>
 			<li><a href="#inputs">Inputs</a></li>
-			<li><a href="#preview">Preview</a></li>
 		</ul>
         <div id="inputs">
-        	<form id="form1" action="javascript:void(0)">
-				Starting row    <input type="number" value="0" id="pOne" name="pOne" required autofocus><br>
-				Ending row      <input type="number" value="0" id="pTwo" name="pTwo" required><br>
-				Starting column <input type="number" value="0" id="pThree" name="pThree" required><br>
-				Ending column   <input type="number" value="0" id="pFour" name="pFour" required><br>
-				<button type="submit" value="Create" id="create">Create</button>
+        	<form id="form" action="javascript:void(0)">
+				Starting Row <input type="number" id="pOne" name="pOne" required autofocus><br>
+				Ending Row <input type="number" id="pTwo" name="pTwo" required><br>
+				Starting Column <input type="number" id="pThree" name="pThree" required><br>
+				Ending Column <input type="number" id="pFour" name="pFour" required><br>
+				<button type="submit" id="create">Create</button>
 			</form>
         </div>
-        <div id="preview"></div>
 	</div>
 </body>
 </html>
