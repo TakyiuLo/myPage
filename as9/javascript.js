@@ -16,13 +16,13 @@ var lastSortDescending = false;
 
 // set up AngularJS module, note that name must be the same as that in the
 //    ng-app attribute of the html tag above
-var myApp = angular.module('MoneyApp', []);
+var myApp = angular.module('peopleApp', []);
 
 // set a constant to the JSON file path
-myApp.constant("jsonUrl", "MOCK_DATA.json");
+myApp.constant("jsonUrl", "data.json");
 
 // add business logic to the app controller
-myApp.controller('moneyInfo',
+myApp.controller('peopleInfo',
   /** Read JSON data using Ajax - adapted from Pro AngularJS, p. 149.
    *  @param $scope  the standard AngularJS model scope
    *  @param $http   the built-in AngularJS http object containing the get function
@@ -43,7 +43,7 @@ myApp.controller('moneyInfo',
     // see http://stackoverflow.com/questions/22962468/angularjs-display-current-date
 
     // set the initial sort field (people name) and sort order (ascending)
-
+    $scope.sortField = "id";
     $scope.sortDescending = false;
 
     /**
@@ -61,21 +61,25 @@ myApp.controller('moneyInfo',
       // true to sort in descending order, false to sort in ascending order
       // will be false if sorting a new column or last sort was descending
       if (colNo === 2) {
-        // this is the Currency Code column
-        $scope.sortField = "Money";
+        // this is the Student Name column
+        $scope.sortField = "Gender";
+        // The following statement was used in a previous version of this app.
+        // before adding the orderBy filter to the ng-repeat directive
       } else if (colNo === 3) {
-         // This is the Money column.
-        $scope.sortField = "Credit_Car_Type";
+         // This is the language column.
+        $scope.sortField = "Full_Name";
       } else if (colNo === 4) {
-        // This is the Credit Card Type column.
-        // The JSON FILE has Credit_Car_Type but what I wanted was Credit_Card_Type
-        $scope.sortField = "Credit_Card_#";
+        // This is the webpage column.
+        $scope.sortField = "Launguage";
+        // the following statement was used in a previous version of this app
+        // before adding the orderBy filter to the ng-repeat directive
+        //    $scope.jsonData.data.RECORDS.sort( sort_by( "millisecs", boolSortAscending ) ) ;
       } else if (colNo === 5) {
-         // This is the Credit Card number column.
-        $scope.sortField = "IBAN";
+         // This is the language column.
+        $scope.sortField = "City";
       } else if (colNo === 6) {
-         // This is the Bitcoin Address column.
-        $scope.sortField = "Bitcoin_Address";
+         // This is the language column.
+        $scope.sortField = "Country";
       }
 
       // save the sort paramesters for the next click
