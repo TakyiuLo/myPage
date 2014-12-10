@@ -53,7 +53,7 @@
       <tbody ng-model="jsonData">
         <tr ng-repeat="info in jsonData.data | filter:query | orderBy: sortField: sortDescending">
           <!-- The built-in AngularJS loop index. -->
-
+          <td>{{info.Currency_Code}}</td>
           <!-- First_Name expression from data.json. -->
           <td>{{info.Money}}</td>
           <!-- Last_Name expression from data.json. -->
