@@ -8,7 +8,7 @@
      data.json is a free sample data generating from
      http://www.mockaroo.com/#tab_all -->
 
-<html ng-app="MoneyApp">
+<html ng-app="peopleApp">
 
 <head>
   <meta charset="utf-8">
@@ -23,7 +23,7 @@
 </head>
 
 <!-- Attached controller class to the view of the page -->
-<body ng-controller="moneyInfo">
+<body ng-controller="peopleInfo">
   <div id="content">
     <!-- Page header and Assignment information. -->
     <h2 id="maintitle">91.461 Assignment No. 9</h2>
@@ -37,16 +37,16 @@
     <!-- Comment on the database -->
     <p>This is a random set of database generated from <a href="http://www.mockaroo.com/#tab_all" target="_blank">Mockaroo</a>.</p>
     <!-- This table list all people information from data.json. -->
-    <table id="moneyInfo">
+    <table id="peopleInfo">
       <thead>
         <tr>
-          <th>Currency Code</th>
+          <th>Number</th>
           <!-- Sorted list by clicking on the headers. -->
-          <th ng-click="sortColumn(2)">Money</th>
-          <th ng-click="sortColumn(3)">Credit Card Type</th>
-          <th ng-click="sortColumn(4)">Credit Card #</th>
-          <th ng-click="sortColumn(5)">IBAN</th>
-          <th ng-click="sortColumn(6)">Bitcoin Address</th>
+          <th ng-click="sortColumn(2)">Gender</th>
+          <th ng-click="sortColumn(3)">Full Name</th>
+          <th ng-click="sortColumn(4)">Launguage</th>
+          <th ng-click="sortColumn(5)">City</th>
+          <th ng-click="sortColumn(6)">Country</th>
         </tr>
       </thead>
 
@@ -55,15 +55,15 @@
           <!-- The built-in AngularJS loop index. -->
           <td>{{$index + 1}}</td>
           <!-- First_Name expression from data.json. -->
-          <td>{{info.Money}}</td>
+          <td>{{info.Gender}}</td>
           <!-- Last_Name expression from data.json. -->
-          <td>{{info.Credit_Car_Type}}</td>
+          <td>{{info.Full_Name}}</td>
           <!-- Language expression from data.json. -->
-          <td>{{info.Credit_Card_#}}</td>
+          <td>{{info.Launguage}}</td>
           <!-- City address from data.json. -->
-          <td>{{info.IBAN}}</td>
+          <td>{{info.City}}</td>
           <!-- Country address from data.json. -->
-          <td>{{info.Bitcoin_Address}}</td>
+          <td>{{info.Country}}</td>
         </tr>
       </tbody>
     </table>
