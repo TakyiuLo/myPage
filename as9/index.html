@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
- <!-- File: http://takyiulo.github.io/myPage/as9/
+ <!-- File: http://weblab.cs.uml.edu/~mpatel2/a9/index.html
      91.461 Assignment 9: Using AngularJS
-     TakYiu Lo, UMass Lowell Computer Science, takyiu_lo@student.uml.edu
-     Created on December 10, 2014
+     Mihir Patel, UMass Lowell Computer Science, mihir_patel@student.uml.edu
+     Created on December 08, 2014
      I have received help from Bunchhieng Soth.
-     MOCK_DATA.json is a free sample data generating from
+     data.json is a free sample data generating from
      http://www.mockaroo.com/#tab_all -->
 
 <html ng-app="MoneyApp">
@@ -53,7 +53,7 @@
       <tbody ng-model="jsonData">
         <tr ng-repeat="info in jsonData.data | filter:query | orderBy: sortField: sortDescending">
           <!-- The built-in AngularJS loop index. -->
-          <td>{{info.Currency_Code}}</td>
+          <td>{{$index + 1}}</td>
           <!-- First_Name expression from data.json. -->
           <td>{{info.Money}}</td>
           <!-- Last_Name expression from data.json. -->
