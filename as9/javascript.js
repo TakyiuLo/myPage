@@ -1,10 +1,10 @@
 /**
- * Author: TakYiu Lo, takyiu_lo@student.uml.edu
- * Created on: 12/10/2014
- * File: javascript.js
+ * Author: Mihir Patel, mihir_patel@student.uml.edu
+ * Created on: 12/03/2014
+ * File: app.js
  * This is app module, controller and custom filter for AngularJS application.
  * I have received help from Bunchhieng Soth.
- * Part of this javascript.js code is taken from Prof. Heines starter code.
+ * Part of this app.js code is taken from Prof. Heines starter code.
  */
 
 "use strict"; // to ensure that all variables are declared before use
@@ -43,7 +43,7 @@ myApp.controller('moneyInfo',
     // see http://stackoverflow.com/questions/22962468/angularjs-display-current-date
 
     // set the initial sort field (people name) and sort order (ascending)
-    $scope.sortField = "Currency_Code";
+
     $scope.sortDescending = false;
 
     /**
