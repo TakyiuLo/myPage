@@ -61,6 +61,7 @@ th,td {
 
 th:nth-child(n-7) {
     color:#fff;
+	cursor:pointer;
     border:none
 }
 
