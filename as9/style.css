@@ -7,27 +7,44 @@ body {
     background:#eee;
     color:#777;
     font:300 16px/1.6 Roboto,sans-serif;
-    margin:25px 100px
+    margin:25px 100px 0
 }
 
 /* give the header a different color */
 h1 {
     color:#555;
     font-size:50px;
-    margin-bottom:-40px
+    margin-bottom:-40px;
+    margin-right:750px;
+    -webkit-transition:-webkit-transform .2s ease-out;
+    -moz-transition:-moz-transform .2s ease-out;
+    -o-transition:-o-transform .2s ease-out;
+    -ms-transition:-ms-transform .2s ease-out;
+    transition:transform .2s ease-out
 }
 
 /* Give "Using Angular JS" a better style"*/
 p {
     font-size:25px;
     padding:0 0 0 50px;
-    margin-bottom:10px
+    margin-bottom:10px;
+    margin-right:900px;
+    -webkit-transition:-webkit-transform .2s ease-out;
+    -moz-transition:-moz-transform .2s ease-out;
+    -o-transition:-o-transform .2s ease-out;
+    -ms-transition:-ms-transform .2s ease-out;
+    transition:transform .2s ease-out
 }
 
 /* Changing the width and height of the search text field */
 #search {
     height:30px;
-    width:250px
+    width:200px;
+    -webkit-transition:-webkit-transform .2s ease-out;
+    -moz-transition:-moz-transform .2s ease-out;
+    -o-transition:-o-transform .2s ease-out;
+    -ms-transition:-ms-transform .2s ease-out;
+    transition:transform .2s ease-out
 }
 
 /* changing the appearance of the inputs */
@@ -63,6 +80,31 @@ th:nth-child(n-7) {
     color:#fff;
     cursor:pointer;
     border:none
+}
+
+/* ANIMATION: when hover on top of the table, enlarge the cell */
+#moneyInfo thead tr th:nth-child(n-7):hover {
+    -webkit-transition:-webkit-transform .2s ease-out;
+    -moz-transition:-moz-transform .2s ease-out;
+    -o-transition:-o-transform .2s ease-out;
+    -ms-transition:-ms-transform .2s ease-out;
+    transition:transform .2s ease-out
+}
+
+#moneyInfo tbody tr td:nth-child(n):hover {
+    -webkit-transition:-webkit-transform .2s ease-out;
+    -moz-transition:-moz-transform .2s ease-out;
+    -o-transition:-o-transform .2s ease-out;
+    -ms-transition:-ms-transform .2s ease-out;
+    transition:transform .2s ease-out;
+    background-color:#eee
+}
+
+h1:hover,p:hover,#search:hover,#moneyInfo thead tr th:nth-child(n-7):hover,#moneyInfo tbody tr td:nth-child(n):hover {
+    -webkit-transform:scale(1.2);
+    -moz-transform:scale(1.2);
+    -o-transform:scale(1.2);
+    transform:scale(1.2)
 }
 
 /*  Give a nice background color to each cell on the first row*/
