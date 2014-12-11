@@ -1,0 +1,94 @@
+/*
+*  User: TakYiu Lo, takyiu_lo@student.uml.edu
+*  Modified on: 12/10/2014
+*  File: style.css
+*/
+body {
+    background:#eee;
+    color:#777;
+    font:300 16px/1.6 Roboto,sans-serif;
+    margin:25px 100px
+}
+
+/* give the header a different color */
+h1 {
+    color:#555;
+    font-size:50px;
+    margin-bottom:-40px
+}
+
+/* Give "Using Angular JS" a better style"*/
+p {
+    font-size:25px;
+    padding:0 0 0 50px;
+    margin-bottom:10px
+}
+
+/* Changing the width and height of the search text field */
+#search {
+    height:30px;
+    width:250px
+}
+
+/* changing the appearance of the inputs */
+input {
+    margin:7px 20px;
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+    border:2px solid #dadada;
+    padding:0 10px
+}
+
+/* changing the appearance of the focus of inputs */
+input:focus {
+    outline:none;
+    border-color:#9ecaed;
+    box-shadow:0 0 10px #9ecaed
+}
+
+/* Table align center */
+table {
+    text-align:center;
+    margin:0 auto
+}
+
+/* Give border to each cell except the first row */
+th,td {
+    border:2px solid #9ecaed;
+    padding:2px 5px
+}
+
+th:nth-child(n-7) {
+    color:#fff;
+    border:none
+}
+
+/*  Give a nice background color to each cell on the first row*/
+th:nth-child(1) {
+    background-color:#C00
+}
+
+th:nth-child(2) {
+    background-color:#93C
+}
+
+th:nth-child(3) {
+    background-color:#F80
+}
+
+th:nth-child(4) {
+    background-color:#690
+}
+
+th:nth-child(5) {
+    background-color:#33B5E5
+}
+
+th:nth-child(6) {
+    background-color:#F44
+}
+
+th:nth-child(7) {
+    background-color:#09C
+}
