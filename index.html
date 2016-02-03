@@ -1,26 +1,29 @@
-<!DOCTYPE>
+<!doctype html>
 <html>
-<head>
-    <script src="http://popcornjs.org/code/dist/popcorn-complete.js"></script>  
-</head>
-<body>
-    <!--
-    <iframe width="860" height="600" src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&start=0&end=15&showinfo=0&controls=0&disablekb=1&rel=0" frameborder="0" allowfullscreen></iframe>
-    -->
-    <div id="footnote-div"></div>
-    
+  <head>
+    <script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
+
     <script>
-        var pop = Popcorn.youtube("#video", "http://www.youtube.com/embed/M7lc1UVf-VE");
-        
-        pop.footnote({
-            start: 0
-            end: 15
-            text: "Works"
-            target: "footnote-div"
-        });
-        
-        pop.play();
+      // ensure the web page (DOM) has loaded
+      document.addEventListener("DOMContentLoaded", function () {
+           // Create a popcorn instance by calling the Youtube player plugin
+         var example = Popcorn.youtube(
+           '#video',
+           'http://www.youtube.com/watch?v=CxvgCLgwdNk' );
+         // add a footnote at 2 seconds, and remove it at 6 seconds
+         example.footnote({
+           start: 2,
+           end: 6,
+           text: "Pop!",
+           target: "footnotediv"
+         });
+         // play the video right away
+         example.play();
+      }, false);
     </script>
-    
-</body>
+  </head>
+  <body>
+    <div id="video" style="width: 360px; height: 300px;" ></div>
+    <div id="footnotediv"></div>
+  </body>
 </html>
