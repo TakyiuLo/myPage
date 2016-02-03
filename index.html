@@ -1,0 +1,26 @@
+<!DOCTYPE>
+<html>
+<head>
+    <script src="http://popcornjs.org/code/dist/popcorn-complete.js"></script>  
+</head>
+<body>
+    <!--
+    <iframe width="860" height="600" src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&start=0&end=15&showinfo=0&controls=0&disablekb=1&rel=0" frameborder="0" allowfullscreen></iframe>
+    -->
+    <div id="footnote-div"></div>
+    
+    <script>
+        var pop = Popcorn.youtube("#video", "http://www.youtube.com/embed/M7lc1UVf-VE");
+        
+        pop.footnote({
+            start: 0
+            end: 15
+            text: "Works"
+            target: "footnote-div"
+        });
+        
+        pop.play();
+    </script>
+    
+</body>
+</html>
