@@ -64,6 +64,9 @@ function dealerPlay() {
     for (; dealer.sum < 17 && dealer.sum_Ace < 17;) {
         hit();
     }
+    for (; dealer.sum < 17 && dealer.sum_Ace > 17;) {
+        hit();
+    }
 }
 
 // hit
