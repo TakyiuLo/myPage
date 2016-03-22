@@ -37,27 +37,35 @@ function checkEndGame() {
     if (dealer.sum_Ace <= 21 && dealer.sum_Ace > dealer.sum) {
         dealer.sum = dealer.sum_Ace;
     }
-
-    if (player.sum > 21 && dealer.sum < 21) {
-        game.winner = dealer.name;
-    }
-    if (player.sum < 21 && dealer.sum > 21) {
+    
+    if (player.sum <= 21 && player.sum > dealer.sum) {
         game.winner = player.name;
+    } else if (dealer.sum <= 21 && dealer.sum > player.sum) {
+        game.winner = dealer.name;
+    } else {
+        game.winner = "DRAW"
     }
-    if (player.sum > 21 && dealer.sum > 21) {
-        game.winner = "DRAW";
-    }
-    if (player.sum <= 21 && dealer.sum <= 21) {
-        if (player.sum > dealer.sum) {
-            game.winner = player.name;
-        }
-        if (player.sum < dealer.sum) {
-            game.winner = dealer.name;
-        }
-        if (player.sum == dealer.sum) {
-            game.winner = "DRAW";
-        }
-    }
+    
+    // if (player.sum > 21 && dealer.sum < 21) {
+    //     game.winner = dealer.name;
+    // }
+    // if (player.sum < 21 && dealer.sum > 21) {
+    //     game.winner = player.name;
+    // }
+    // if (player.sum > 21 && dealer.sum > 21) {
+    //     game.winner = "DRAW";
+    // }
+    // if (player.sum <= 21 && dealer.sum <= 21) {
+    //     if (player.sum > dealer.sum) {
+    //         game.winner = player.name;
+    //     }
+    //     if (player.sum < dealer.sum) {
+    //         game.winner = dealer.name;
+    //     }
+    //     if (player.sum == dealer.sum) {
+    //         game.winner = "DRAW";
+    //     }
+    // }
     EndGame();
 }
 
