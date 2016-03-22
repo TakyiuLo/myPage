@@ -61,7 +61,7 @@ function checkEndGame() {
 // dealer needed to draw cards
 function dealerPlay() {
     var dealer = game.players[game.current_player_index];
-    for (; dealer.sum < 17 && dealer.sum_Ace < 17;) {
+    for (; dealer.sum < 17 || dealer.sum_Ace < 17;) {
         hit();
     }
 }
