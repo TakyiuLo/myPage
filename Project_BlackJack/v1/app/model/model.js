@@ -10,7 +10,7 @@ var game = {
 
 // print out the model
 function print() {
-    var jsonString = JSON.stringify(game.players);
+    var jsonString = JSON.stringify(game);
     console.log(jsonString);
 }
 
